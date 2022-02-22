@@ -27,3 +27,8 @@
     flex-direction: row;
     align-items: center;
 }
+
+.input-error{
+    border: solid red 2px;
+  
+}
