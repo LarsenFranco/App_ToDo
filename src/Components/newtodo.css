@@ -1,0 +1,29 @@
+
+.newtodo{
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 5px solid black;
+}   
+
+.form-floating{
+    width: 40rem;
+    height: auto;
+    margin: 4rem;
+}
+
+.form-control{
+    margin: 1rem;
+    text-align: center;
+    font-size: 2rem;
+  
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
