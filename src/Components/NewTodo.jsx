@@ -42,7 +42,7 @@ export function AddTodo(props) {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     props.addTodo(input);
-    alerta();
+    
     setInput(resetInput);
     setError({title:''});
   };
@@ -62,11 +62,6 @@ export function AddTodo(props) {
   }
 
 
-  function alerta(){
-        setTimeout(() => {          
-         alert('hola')
-        }, 0); 
-  }
 
 
   return (

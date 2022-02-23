@@ -8,10 +8,8 @@ import { useEffect } from 'react';
 
 function Home() {
   useEffect(()=>{
-    // alert("hola")
+     alert("hola")
   })
-
-
   return (
     <>
         <div className="container">
