@@ -8,15 +8,17 @@ import { useEffect } from 'react';
 
 function Home() {
   useEffect(()=>{
-     alert("hola")
+    //  alert("hola")
   })
   return (
     <>
+    <div className='totalPage'>
         <div className="container">
             <div  className="card"  ><ToDoDetail title="ToDo" status="Todo"/></div>
             <div className="card"><ToDoDetail title="In Progress"  status="InProgress"/></div>
             <div  className="card"><ToDoDetail title="Done"  status="Done"/></div>
         </div>
+      </div>
     </>
   )
 }

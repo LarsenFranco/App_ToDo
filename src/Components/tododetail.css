@@ -10,7 +10,6 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-  
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
@@ -22,25 +21,28 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
   }
-  
-  .delete:hover{
-      background-color: rgba(212, 14, 14, 0.705);
+
+  .cajaItem{
+    background-color: #CFEFEA;
+    border-style: none;
+    border-radius: 20px !important;
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
   }
-  .move:hover{
-    background-color: rgba(16, 153, 57, 0.705);
-  }
-  .restore:hover{
-    background-color: rgba(48, 255, 11, 0.596);
-  }
-  
-  .list-group-item:hover{
-    background-color: rgba(187, 187, 187, 0.472);
+
+
+  .cajaItem:hover{
+    background-color: #a2ece1;
+    
+    /* background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%); */
   }
 
   p{
     font-size: 1.5rem;
     font-weight: 500;
   }
+
 
   /*
   Tipo de tarjeta según estado

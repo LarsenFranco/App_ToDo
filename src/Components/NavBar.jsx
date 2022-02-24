@@ -1,25 +1,32 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {Button} from 'react-bootstrap'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./navbar.css"
+import "./navbar.css";
 function NavBar() {
-
-
   return (
-    <div className="d-flex flex-row bd-highlight mb-3 principal" >
-      <div className="p-2 bd-highlight">
-         <Link to='/' ><Button variant="primary" >Home</Button></Link>
+    <div className="navbar navbar-dark bg-dark principal">
+      
+      <div >
+        <Link to="/">
+          <button className="navbar-toggler btnNav" >Home</button>
+        </Link>
       </div>
-      <div className="p-2 bd-highlight">
-          <Link to='/new' ><Button variant="primary" >New</Button></Link>
+      
+      <div >
+        <Link to="/new">
+        <button className="navbar-toggler btnNav" >NEW TASK</button>
+        </Link>
       </div>
-      <div className="p-2 bd-highlight">
-         <Link to='/about' ><Button variant="primary" >About</Button></Link>
+     
+      <div >
+        <Link to="/about">
+        <button className="navbar-toggler btnNav" >About me</button>
+        </Link>
       </div>
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

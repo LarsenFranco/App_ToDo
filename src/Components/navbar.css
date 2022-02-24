@@ -1,3 +1,17 @@
 .principal{
-    background-color: rgb(36, 36, 36);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    height: 3.5rem;
+}
+
+.btnNav{
+    margin: 0 1rem 0 1rem;
+    font-size: 1.4rem;
+}
+.btnNav:hover{
+    transform: scale(120%);
+    color: white;
+    background-color: black;
 }

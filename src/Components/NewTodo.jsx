@@ -16,8 +16,6 @@ export function AddTodo(props) {
     date: "",
   };
 
-
-
   const [input, setInput] = React.useState(resetInput);
   const[error,setError]  =React.useState({
     title:''}

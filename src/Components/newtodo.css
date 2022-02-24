@@ -1,7 +1,7 @@
 
 .newtodo{
     height: auto;
-
+    background-color:#CFEFEA;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +19,7 @@
     margin: 1rem;
     text-align: center;
     font-size: 2rem;
+   
   
 }
 
