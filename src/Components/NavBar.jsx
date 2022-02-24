@@ -14,13 +14,13 @@ function NavBar() {
         </Link>
       </div>
       
-      <div >
+      <div>
         <Link to="/new">
-        <button className="navbar-toggler btnNav" >NEW TASK</button>
+        <button className="navbar-toggler btnNav" >New task</button>
         </Link>
       </div>
      
-      <div >
+      <div>
         <Link to="/about">
         <button className="navbar-toggler btnNav" >About me</button>
         </Link>

@@ -5,6 +5,14 @@ const todos = (state = initialState, action) => {
   switch(action.type) {
     case "AddTodo":
       return state.concat(action.payload);
+    
+      case "BackTodo":
+      return state.map((todo)=>{
+        if(todo.id===action.payload){
+          todo.status="Todo"
+        }
+        return todo;
+      });
 
     case "ToInProgress":
       return state.map((todo)=>{

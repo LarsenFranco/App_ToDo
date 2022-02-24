@@ -32,3 +32,11 @@ export const toDone = (id) => {
         payload: id
     }
 };
+
+
+export const backToDo = (id) => {
+    return {
+        type: "BackTodo",
+        payload: id
+    }
+};

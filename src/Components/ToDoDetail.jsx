@@ -4,7 +4,7 @@ import "./tododetail.css";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
-import { removeTodo, toInProgress, toDone } from "../../Redux/actions";
+import { removeTodo, toInProgress, toDone, backToDo } from "../../Redux/actions";
 
 function ToDoDetail(props) {
   let estado = props.status;
@@ -17,22 +17,27 @@ function ToDoDetail(props) {
     dispatch(removeTodo(id));
   }
 
-  function moveTo(id) {
-    // if(estado==="Todo"){
-    //     dispatch(toInProgress(id))
-    // }else{
-    //     if(estado==="InProgress"){
-    //         dispatch(toDone(id))
-    //     }
-    // }
-    switch (estado) {
-      case "Todo":
-        return dispatch(toInProgress(id));
-      case "InProgress":
-        return dispatch(toDone(id));
-      default:
-        return;
+  function moveTo(id, direction) {
+    if(estado==='InProgress' && direction==='next'){
+      return dispatch(toDone(id));
     }
+    if(estado==='InProgress' && direction==='prev'){
+      return dispatch(backToDo(id));
+    }
+
+    if(estado==='Todo' && direction==='next'){
+      return dispatch(toInProgress(id));
+    }
+    if(estado==='Done' && direction==='next'){
+      return dispatch(removeTodo(id));
+    }
+   
+    if(estado==='Done' && direction==='prev'){
+      return dispatch(toInProgress(id));
+    }
+   
+
+
   }
 
   return (
@@ -44,15 +49,24 @@ function ToDoDetail(props) {
             <p>{tarea.title}</p>
             <br />
             {
+                 tarea.status!=="Done"?
               <>
-                
-                <button  className="carousel-control-prev ">
+                <button  onClick={(e)=>moveTo(tarea.id, 'prev')}  className="carousel-control-prev ">
                   <span className="material-icons">arrow_back_ios</span>
                 </button>
-                <button className="carousel-control-next ">
+                <button onClick={(e)=>moveTo(tarea.id, 'next')}  className="carousel-control-next ">
                   <span className="material-icons ">arrow_forward_ios</span>
                 </button>
-              </>
+              </>:
+              <div>
+                <button  onClick={(e)=>deleteItem(tarea.id)} className="carousel-control-next ">
+                  <span className="material-icons">close</span>
+                </button>
+                
+                <button onClick={(e)=>moveTo(tarea.id, 'prev')}  className="carousel-control-prev ">
+                  <span className="material-icons delete">arrow_back_ios</span>
+                </button>
+              </div>
             }       
             
           </div>
