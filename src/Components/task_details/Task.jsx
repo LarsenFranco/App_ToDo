@@ -4,16 +4,21 @@ import { useParams } from "react-router";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./task.css";
+import {editTask} from "../../../Redux/actions"
+import { useDispatch } from "react-redux";
+
 
 function Task() {
+  const dispatch = useDispatch();
   const { id } = useParams();
-
   const tasks = useSelector((initialState) => initialState);
-
   let tarea = tasks.find((e) => e.id == id);
 
-  function editTask(e) {
-    alert("Algun día");
+  
+
+
+  function editar(inputs) {
+    dispatch(editTask(inputs))
   }
 
   return (
@@ -42,9 +47,9 @@ function Task() {
           </p>
           <br />
 
-          <button onClick={(e) => editTask(e)} type="button" class="btn ">
+          <button onClick={(e) => editar(tarea)} type="button" class="btn ">
           
-            <span class="material-icons penEdit">edit</span>
+            <span className="material-icons penEdit">edit</span>
           </button>
         </div>
       </div>
@@ -53,31 +58,3 @@ function Task() {
 }
 
 export default Task;
-
-/*
-
-function UserDetail() {        
-
-    const dispatch = useDispatch();
-    const user = useSelector((state)=>state.user )
-    
-    const {id} = useParams() 
-
-    useEffect(()=>{
-        console.log('efeeeect')
-        console.log(user)
-        dispatch(getUser(id));
-     },[])z
-    return (
-    <div>
-        <h1>EL USUARIO </h1>
-         <p>NAME: {user.user}</p>
-         <h2>ID: {id}</h2>
-    </div>
-  )
-}
-
-
-
-
-*/

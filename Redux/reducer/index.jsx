@@ -32,6 +32,11 @@ const todos = (state = initialState, action) => {
           }
           return todo;
         })
+
+        case "Edit":
+          state.filter((todo)=>todo.id!==action.payload.id) 
+           state.concat(action.payload)
+          return state
     default: return state;
   }
 

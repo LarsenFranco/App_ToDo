@@ -7,7 +7,7 @@ import "./newtodo.css";
 
 
 
-export function AddTodo(props) {
+export function AddTodo(props, edit) {
   
   
 

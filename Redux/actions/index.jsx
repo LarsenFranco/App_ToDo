@@ -1,4 +1,4 @@
-// Podes usar esta variable para generar un ID por cada Todo.
+
 let todoId = 0;
 
 export const addTodo = (inputs) => {
@@ -40,3 +40,10 @@ export const backToDo = (id) => {
         payload: id
     }
 };
+
+export const editTask = (input) =>{
+    return {
+        type: "Edit",
+        payload: input
+    }
+}
