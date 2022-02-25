@@ -4,7 +4,11 @@ import "./tododetail.css";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
-import { removeTodo, toInProgress, toDone, backToDo } from "../../Redux/actions";
+import { removeTodo, toInProgress, toDone, backToDo } from "../../../Redux/actions"
+import { Link } from "react-router-dom";
+
+
+
 
 function ToDoDetail(props) {
   let estado = props.status;
@@ -16,6 +20,7 @@ function ToDoDetail(props) {
   function deleteItem(id) {
     dispatch(removeTodo(id));
   }
+
 
   function moveTo(id, direction) {
     if(estado==='InProgress' && direction==='next'){
@@ -46,7 +51,9 @@ function ToDoDetail(props) {
       <div className="list-group tarjeta">
         {tareas.map((tarea) => (
           <div key={tarea.id} className={`list-group-item cajaItem`}>
-            <p>{tarea.title}</p>
+            
+           <Link  className="link" to={`/detail/${tarea.id}`} ><p>{tarea.title}</p>    </Link> 
+           
             <br />
             {
                  tarea.status!=="Done"?
@@ -68,7 +75,7 @@ function ToDoDetail(props) {
                 </button>
               </div>
             }       
-            
+        
           </div>
           
         ))}

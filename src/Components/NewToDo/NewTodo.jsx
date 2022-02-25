@@ -1,20 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addTodo } from "../../Redux/actions";
+import { addTodo } from "../../../Redux/actions"
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./newtodo.css";
-import { useState } from "react";
+
 
 
 export function AddTodo(props) {
   
+  
+
+
   const resetInput = {
     title: "",
     description: "",
     place: "",
     date: "",
   };
+
+  function getFocus  () {
+    document.getElementById("inpTitle").focus();
+  }
 
   const [input, setInput] = React.useState(resetInput);
   const[error,setError]  =React.useState({
@@ -43,6 +50,7 @@ export function AddTodo(props) {
     
     setInput(resetInput);
     setError({title:''});
+    getFocus();
   };
 
   function validateData (input){
@@ -50,20 +58,15 @@ export function AddTodo(props) {
     if (!input.title) {
       errors.title = 'Title is required';
     }
-    if (!input.description) {
-      errors.description = 'Description is required';
-    }
-    if (!input.place) {
-      errors.place = 'Place is required';
-    }
+    
     return errors;
   }
 
 
-
+ 
 
   return (
-    <div className="container newtodo">
+    <div className="card newtodo">
       <form className="form-floating" onSubmit={handleOnSubmit}>
         <h1>New task</h1>
        
@@ -75,6 +78,7 @@ export function AddTodo(props) {
             className={`form-control ${error.title && 'input-error'}`}
             name="title"
             value={input.title}
+            id="inpTitle"
             onChange={handleOnChange}
           > 
           </input>
@@ -94,19 +98,18 @@ export function AddTodo(props) {
         <div className="inputs">
           <label className="material-icons">location_on</label>
           <input
-            className={`form-control ${error.place && 'input-error'}`}
+            className={`form-control`}
             name="place"
             value={input.place}
             onChange={handleOnChange}
-          ></input>
-           
-
+          ></input>           
         </div>
 
         <div className="inputs">
 
         <label className="material-icons">today</label>
         <input
+        type='date'
           className="form-control"
           name="date"
           value={input.date}

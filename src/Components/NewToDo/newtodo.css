@@ -1,26 +1,27 @@
 
 .newtodo{
-    height: auto;
-    background-color:#CFEFEA;
     display: flex;
     flex-direction: column;
+    background-color:#cfefea86;
+    
+    margin: auto;
+    
     align-items: center;
     border-radius: 20px;
     border: 5px solid black;
 }   
 
 .form-floating{
+    text-align: center;
     width: 40rem;
     height: auto;
-    margin: 4rem;
+    margin: 2rem;
 }
 
 .form-control{
     margin: 1rem;
     text-align: center;
-    font-size: 2rem;
-   
-  
+    font-size: 1.2rem;
 }
 
 .inputs{
@@ -31,5 +32,4 @@
 
 .input-error{
     border: solid red 2px;
-  
 }

@@ -3,13 +3,9 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./home.css"
-import ToDoDetail from './ToDoDetail';
-import { useEffect } from 'react';
-
+import ToDoDetail from "../ToDo_Detail/ToDoDetail"
 function Home() {
-  useEffect(()=>{
-    //  alert("hola")
-  })
+  
   return (
     <>
     <div className='totalPage'>
